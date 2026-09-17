@@ -1,0 +1,16 @@
+name: CI Canary
+
+on:
+  push:
+    branches: ["project-skeleton"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Canary check (intentionally failing)
+        run: |
+          echo "This step fails on purpose to validate the Actions failure and re-run path."
+          exit 1
